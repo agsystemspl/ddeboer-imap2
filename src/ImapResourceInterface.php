@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Ddeboer\Imap2;
 
-use IMAP\Connection;
+use Javanile\Imap2\Connection;
 
 interface ImapResourceInterface
 {
