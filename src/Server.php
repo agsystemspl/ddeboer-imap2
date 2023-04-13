@@ -41,8 +41,8 @@ final class Server implements ServerInterface
         int $options = 0,
         int $retries = 1
     ) {
-        if (!\function_exists('imap_open')) {
-            throw new \RuntimeException('IMAP extension must be enabled');
+        if (!\function_exists('imap2_open')) {
+            throw new \RuntimeException('IMAP2 extension must be enabled');
         }
 
         $this->hostname   = $hostname;
