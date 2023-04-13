@@ -1,0 +1,10 @@
+/.idea/
+/.phpunit.cache/
+/coverage/
+/tmp/
+/vendor/
+/.php-cs-fixer.cache
+/.phpunit.result.cache
+/composer.lock
+/phpunit.xml
+/wait-for-it
