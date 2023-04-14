@@ -43,9 +43,9 @@ final class Mailbox implements MailboxInterface
 
     public function renameTo(string $name): bool
     {
-        $encodedName = \mb_convert_encoding($name, \mb_detect_encoding($name), 'UTF-8');
+        $encodedName = \mb_convert_encoding($name, 'UTF7-IMAP', 'UTF-8');
         $oldFullName = $this->getFullEncodedName();
-        $newFullName = \preg_replace('/' . \preg_quote(\mb_convert_encoding($this->name, \mb_detect_encoding($this->name), 'UTF-8')) . '$/', $encodedName, $oldFullName);
+        $newFullName = \preg_replace('/' . \preg_quote(\mb_convert_encoding($this->name, 'UTF7-IMAP', 'UTF-8')) . '$/', $encodedName, $oldFullName);
         \assert(null !== $newFullName);
 
         $return = \imap2_renamemailbox($this->resource->getStream(), $oldFullName, $newFullName);
